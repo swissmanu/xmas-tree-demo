@@ -7,7 +7,9 @@ const Layout = styled.main`
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   height: 100%;
+  gap: 20px;
   background: rgb(2, 0, 36);
   background: linear-gradient(
     0deg,
@@ -18,9 +20,15 @@ const Layout = styled.main`
 `;
 
 function App() {
+  const [turnLightsOn, updateLights] = React.useState(false);
+  const onClick = React.useCallback(() => {
+    updateLights(!turnLightsOn);
+  }, [turnLightsOn]);
+
   return (
     <Layout>
-      <XmasTree />
+      <XmasTree turnLightsOn={turnLightsOn} />
+      <button onClick={onClick} data-testid="toggle-lights">Toggle Lights</button>
     </Layout>
   );
 }
