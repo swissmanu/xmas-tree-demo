@@ -20,7 +20,7 @@ const Layout = styled.main`
 function App() {
   return (
     <Layout>
-      <XmasTree turnLightsOn />
+      <XmasTree />
     </Layout>
   );
 }
