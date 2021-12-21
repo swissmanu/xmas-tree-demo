@@ -20,7 +20,7 @@ const Layout = styled.main`
 `;
 
 function App() {
-  const [turnLightsOn, updateLights] = React.useState(false);
+  const [turnLightsOn, updateLights] = React.useState(true);
   const onClick = React.useCallback(() => {
     updateLights(!turnLightsOn);
   }, [turnLightsOn]);
